@@ -1,0 +1,32 @@
+{
+  "content": {
+    "name": "Joseph A. Raver",
+    "profileImage": "images/headshot.jpg",
+    "backgroundImage": "path to background image",
+    "position": "Software Engineer Senior Specialist",
+    "location": "Wethersfield, CT",
+    "social": {
+      "title": "a title to the social section underneath the profile info",
+      "profiles": [
+        {
+          "network": "the icon name from the font awesome cheatsheet see http://fontawesome.io/icons/#brand",
+          "link": "the link to go to when clicked"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "card header",
+        "content": "main card text",
+        "image": "Optional image for the card",
+        "org": "Subtitle ex. organization",
+        "orgLink": "Subtitle link",
+        "start": "Start date",
+        "end": "End date"
+      }
+    ]
+  },
+  "settings": {
+    "primaryColor": "#188CCC"
+  }
+}
