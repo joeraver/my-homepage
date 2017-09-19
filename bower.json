@@ -1,5 +1,6 @@
 {
-  "name": "test",
+  "name": "my-homepage",
+  "description": "Homepage for Joseph Raver",
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0"

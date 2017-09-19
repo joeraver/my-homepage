@@ -1,6 +1,6 @@
-# \<test\>
+# \<my-homepage\>
 
-
+Homepage for Joseph Raver
 
 ## Install the Polymer-CLI
 
