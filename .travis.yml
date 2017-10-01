@@ -3,8 +3,12 @@ node_js:
   - "6.11.3"
 script:
   - echo "Deploying!"
-  - polymer build
 install:
   - npm install -g firebase-tools
+  - npm install -g polymer-cli
+script:
+  - polymer build
 after_success:
+  - echo "Build Completed Successfully.
+deploy:
   - firebase deploy --token $FIREBASE_TOKEN
