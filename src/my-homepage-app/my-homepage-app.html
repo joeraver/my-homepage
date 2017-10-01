@@ -1,43 +1,261 @@
-<link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../../bower_components/paper-checkbox/paper-checkbox.html">
-<link rel="import" href="../../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="/bower_components/polymer/polymer-element.html">
+<link rel="import" href="/bower_components/paper-checkbox/paper-checkbox.html">
+<link rel="import" href="/bower_components/paper-card/paper-card.html">
+<link rel="import" href="/bower_components/paper-button/paper-button.html">
+<link rel="import" href="/bower_components/app-layout/app-layout.html">
+<link rel="import" href="/bower_components/app-layout/app-grid/app-grid.html">
+<link rel="import" href="/bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
 
 
 <dom-module id="my-homepage-app">
   <template>
-    <style>
+    <style include="iron-flex iron-flex-alignment app-grid-style">
       :host {
         display: block;
+        --app-grid-columns: 3;
+        --app-grid-item-height: 600px;
       }
-      .center-div {
-        background-size: cover;
+      .top-background {
+        /*position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-size: cover;*/
         background-color: red;
-        padding: 30px;
+        /*padding: 30px;*/
       }
       .profile {
-        display: block;
+        /*display: block;*/
         min-width: 200px;
-        max-width: 350px;
-        text-align: center;
-        margin: 0 auto;
-        padding: 20px;
+        max-width: 500px;
+        max-height: 700px;
+        /*z-index: 1;*/
+        /*text-align: center;*/
+        /*margin: 0 auto;*/
+        margin: 20px;
       }
+      .content {
+        margin: 60px;
+        padding: 60px;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      app-header {
+        --app-header-background-front-layer: {
+          background-color: red;
+          /*background-size: 1240px;*/
+          /*background: url(/src/img/versailles_fountain.jpg) bottom center;*/
+        };
+        /*background-image: url(/src/img/versailles_fountain.jpg);*/
+        --app-header-background-rear-layer: {
+          /* The header is blue when condensed */
+          background-color: blue;
+        };
+      }
+
     </style>
-    <h2>Hello [[prop1]]!</h2>
-    <div class="center-div">
-      <h1>text inside the center div</h1>
-      <paper-checkbox>Testing!</paper-checkbox>
-      <paper-card heading="Emmental" image="http://placehold.it/350x150/FFC107/000000" alt="Emmental">
+    <!--<h2>Hello [[prop1]]!</h2>-->
+    <app-header-layout>
+      <app-header slot="header" fixed condenses style="height: 300px;" effects="resize-title waterfall blend-background">
+        <app-toolbar>
+          <h4 condensed-title>App name</h4>
+        </app-toolbar>
+        <app-toolbar>
+          <h1 main-title>App name</h1>
+        </app-toolbar>
+      </app-header>
+      <!--<app-header slot="header" style="height: 96px;" fixed condenses effects="waterfall" class="top-background">
+        <app-toolbar style="height: 64px;">
+          <div main-title>App name</div>
+        </app-toolbar>
+      </app-header>-->
+      <div class="content layout horizontal">
+        <div class="app-grid">
+          <div class="item">
+            <paper-card image="/src/img/profile.jpg" class="profile">
+              <div class="card-content">
+                Software Engineer
+              </div>
+              <div class="card-actions">
+                <paper-button>Share</paper-button>
+                <paper-button>Explore!</paper-button>
+              </div>
+            </paper-card>
+          </div>
+          <div class="item">
+            <paper-card image="/src/img/profile.jpg" class="profile">
+              <div class="card-content">
+                Software Engineer
+              </div>
+              <div class="card-actions">
+                <paper-button>Share</paper-button>
+                <paper-button>Explore!</paper-button>
+              </div>
+            </paper-card>
+          </div>
+          <div class="item">
+            <paper-card image="/src/img/profile.jpg" class="profile">
+            <div class="card-content">
+              Software Engineer
+            </div>
+            <div class="card-actions">
+              <paper-button>Share</paper-button>
+              <paper-button>Explore!</paper-button>
+            </div>
+          </paper-card>
+          </div>
+
+          <div class="item">
+            <paper-card image="/src/img/profile.jpg" class="profile">
+              <div class="card-content">
+                Software Engineer
+              </div>
+              <div class="card-actions">
+                <paper-button>Share</paper-button>
+                <paper-button>Explore!</paper-button>
+              </div>
+            </paper-card>
+          </div>
+          <div class="item">
+            <paper-card image="/src/img/profile.jpg" class="profile">
+              <div class="card-content">
+                Software Engineer
+              </div>
+              <div class="card-actions">
+                <paper-button>Share</paper-button>
+                <paper-button>Explore!</paper-button>
+              </div>
+            </paper-card>
+          </div>
+          <div class="item">
+            <paper-card image="/src/img/profile.jpg" class="profile">
+              <div class="card-content">
+                Software Engineer
+              </div>
+              <div class="card-actions">
+                <paper-button>Share</paper-button>
+                <paper-button>Explore!</paper-button>
+              </div>
+            </paper-card>
+          </div>
+
+          <div class="item">
+            <paper-card image="/src/img/profile.jpg" class="profile">
+              <div class="card-content">
+                Software Engineer
+              </div>
+              <div class="card-actions">
+                <paper-button>Share</paper-button>
+                <paper-button>Explore!</paper-button>
+              </div>
+            </paper-card>
+          </div>
+          <div class="item">
+            <paper-card image="/src/img/profile.jpg" class="profile">
+              <div class="card-content">
+                Software Engineer
+              </div>
+              <div class="card-actions">
+                <paper-button>Share</paper-button>
+                <paper-button>Explore!</paper-button>
+              </div>
+            </paper-card>
+          </div>
+          <div class="item">
+            <paper-card image="/src/img/profile.jpg" class="profile">
+              <div class="card-content">
+                Software Engineer
+              </div>
+              <div class="card-actions">
+                <paper-button>Share</paper-button>
+                <paper-button>Explore!</paper-button>
+              </div>
+            </paper-card>
+          </div>
+        </div>
+        <!--<paper-card image="/src/img/profile.jpg" class="profile">
+          <div class="card-content">
+            Software Engineer
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+            <paper-button>Explore!</paper-button>
+          </div>
+        </paper-card>
+        <paper-card image="/src/img/profile.jpg" class="profile">
+          <div class="card-content">
+            Software Engineer
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+            <paper-button>Explore!</paper-button>
+          </div>
+        </paper-card>
+        <paper-card image="/src/img/profile.jpg" class="profile">
+          <div class="card-content">
+            Software Engineer
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+            <paper-button>Explore!</paper-button>
+          </div>
+        </paper-card>
+        <paper-card image="/src/img/profile.jpg" class="profile">
+          <div class="card-content">
+            Software Engineer
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+            <paper-button>Explore!</paper-button>
+          </div>
+        </paper-card>
+        <paper-card image="/src/img/profile.jpg" class="profile">
+          <div class="card-content">
+            Software Engineer
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+            <paper-button>Explore!</paper-button>
+          </div>
+        </paper-card>
+        <paper-card image="/src/img/profile.jpg" class="profile">
+          <div class="card-content">
+            Software Engineer
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+            <paper-button>Explore!</paper-button>
+          </div>
+        </paper-card>
+        <paper-card image="/src/img/profile.jpg" class="profile">
+          <div class="card-content">
+            Software Engineer
+          </div>
+          <div class="card-actions">
+            <paper-button>Share</paper-button>
+            <paper-button>Explore!</paper-button>
+          </div>
+        </paper-card>-->
+      </div>
+    <!--<div class="center-div">
+      <div class="top-background"></div>
+      <paper-card image="/src/img/profile.jpg" class="profile">
         <div class="card-content">
-          Emmentaler or Emmental is a yellow, medium-hard cheese that originated in the area around Emmental, Switzerland. It is one of the cheeses of Switzerland, and is sometimes known as Swiss cheese.
+          Software Engineer
         </div>
         <div class="card-actions">
           <paper-button>Share</paper-button>
           <paper-button>Explore!</paper-button>
         </div>
       </paper-card>
-    </div>
+    </div>-->
+    </app-header-layout>
+
   </template>
 
   <script>
