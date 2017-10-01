@@ -8,5 +8,6 @@ install:
   - npm install -g polymer-cli
 script:
   - polymer build
-deploy:
+after_success:
+  - echo "Build Completed Successfully.
   - firebase deploy --token $FIREBASE_TOKEN
