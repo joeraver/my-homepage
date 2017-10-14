@@ -6,275 +6,131 @@
 <link rel="import" href="/bower_components/app-layout/app-grid/app-grid-style.html">
 <link rel="import" href="/bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="/bower_components/iron-icons/iron-icons.html">
 
 
 
 <dom-module id="my-homepage-app">
-  <template>
-    <style include="iron-flex iron-flex-alignment app-grid-style">
-      :host {
-        display: block;
-        --app-grid-columns: 3;
-        --app-grid-item-height: 600px;
-      }
-      .top-background {
-        /*position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        background-size: cover;*/
-        background-color: red;
-        /*padding: 30px;*/
-      }
-      .profile {
-        /*display: block;*/
-        min-width: 200px;
-        max-width: 500px;
-        max-height: 700px;
-        /*z-index: 1;*/
-        /*text-align: center;*/
-        /*margin: 0 auto;*/
-        margin: 20px;
-      }
-      .content {
-        margin: 60px;
-        padding: 60px;
-      }
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      app-header {
-        --app-header-background-front-layer: {
-          background-color: red;
-          /*background-size: 1240px;*/
-          /*background: url(/src/img/versailles_fountain.jpg) bottom center;*/
-        };
-        /*background-image: url(/src/img/versailles_fountain.jpg);*/
-        --app-header-background-rear-layer: {
-          /* The header is blue when condensed */
-          background-color: blue;
-        };
-      }
+    <template>
+        <style include="iron-flex iron-flex-alignment app-grid-style">
+            /*:host {
+                display: block;
+                --app-grid-columns: 3;
+                --app-grid-item-height: 600px;
+            }*/
 
-    </style>
-    <!--<h2>Hello [[prop1]]!</h2>-->
-    <app-header-layout>
-      <app-header slot="header" fixed condenses style="height: 300px;" effects="resize-title waterfall blend-background">
-        <app-toolbar>
-          <h4 condensed-title>App name</h4>
-        </app-toolbar>
-        <app-toolbar>
-          <h1 main-title>Test App name</h1>
-        </app-toolbar>
-      </app-header>
-      <!--<app-header slot="header" style="height: 96px;" fixed condenses effects="waterfall" class="top-background">
-        <app-toolbar style="height: 64px;">
-          <div main-title>App name</div>
-        </app-toolbar>
-      </app-header>-->
-      <div class="content layout horizontal">
-        <div class="app-grid">
-          <div class="item">
-            <paper-card image="/src/img/profile.jpg" class="profile">
-              <div class="card-content">
-                Software Engineer
-              </div>
-              <div class="card-actions">
-                <paper-button>Share</paper-button>
-                <paper-button>Explore!</paper-button>
-              </div>
-            </paper-card>
-          </div>
-          <div class="item">
-            <paper-card image="/src/img/profile.jpg" class="profile">
-              <div class="card-content">
-                Software Engineer
-              </div>
-              <div class="card-actions">
-                <paper-button>Share</paper-button>
-                <paper-button>Explore!</paper-button>
-              </div>
-            </paper-card>
-          </div>
-          <div class="item">
-            <paper-card image="/src/img/profile.jpg" class="profile">
-            <div class="card-content">
-              Software Engineer
-            </div>
-            <div class="card-actions">
-              <paper-button>Share</paper-button>
-              <paper-button>Explore!</paper-button>
-            </div>
-          </paper-card>
-          </div>
+            .profile {
+                /*display: block;*/
+                min-width: 200px;
+                max-width: 500px;
+                max-height: 600px;
+                /*z-index: 1;*/
+                /*text-align: center;*/
+                /*margin: 0 auto;*/
+                margin: 38px;
+            }
+            .profile-header { @apply --paper-font-headline; }
+            .profile-light { color: var(--paper-grey-600); }
 
-          <div class="item">
-            <paper-card image="/src/img/profile.jpg" class="profile">
-              <div class="card-content">
-                Software Engineer
-              </div>
-              <div class="card-actions">
-                <paper-button>Share</paper-button>
-                <paper-button>Explore!</paper-button>
-              </div>
-            </paper-card>
-          </div>
-          <div class="item">
-            <paper-card image="/src/img/profile.jpg" class="profile">
-              <div class="card-content">
-                Software Engineer
-              </div>
-              <div class="card-actions">
-                <paper-button>Share</paper-button>
-                <paper-button>Explore!</paper-button>
-              </div>
-            </paper-card>
-          </div>
-          <div class="item">
-            <paper-card image="/src/img/profile.jpg" class="profile">
-              <div class="card-content">
-                Software Engineer
-              </div>
-              <div class="card-actions">
-                <paper-button>Share</paper-button>
-                <paper-button>Explore!</paper-button>
-              </div>
-            </paper-card>
-          </div>
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            paper-icon-button {
+                --paper-icon-button-ink-color: white;
+            }
+            app-header {
+                color: #fff;
+                --app-header-background-front-layer: {
+                    background-color: #181c1f;
+                    /*background-size: 1240px;*/
+                    /*background: url(/src/img/versailles_fountain.jpg) bottom center;*/
+                };
+                /*background-image: url(/src/img/versailles_fountain.jpg);*/
+                --app-header-background-rear-layer: {
+                    /* The header is blue when condensed */
+                    background-color: #035384;
+                };
+            }
+            app-drawer-layout:not([narrow]) [drawer-toggle] {
+                display: none;
+            }
+            app-toolbar {
+                /*background-color: #4285f4;*/
+                color: #fff;
+            }
+            [main-title] {
+                font-size: 2em;
+            }
+        </style>
+        <!--<h2>Hello [[prop1]]!</h2>-->
+        <app-drawer-layout>
+            <app-drawer slot="drawer">
+                drawer-content
+            </app-drawer>
+            <app-header-layout>
+                <app-header slot="header" fixed condenses
+                            effects="resize-title waterfall blend-background parallax-background">
+                    <app-toolbar>
+                        <paper-icon-button icon="menu" style="color: white !important;" drawer-toggle></paper-icon-button>
+                        <div condensed-title>Joseph Raver</div>
+                    </app-toolbar>
+                    <app-toolbar>
+                        <!--<div main-title>
+                        <h1 main-title="">Joseph Raver</h1>
+                        <h4>Software Engineer</h4>
+                        </div>-->
+                        <div main-title spacer>Joseph Raver</div>
+                    </app-toolbar>
+                </app-header>
+                <!--<app-header slot="header" style="height: 96px;" fixed condenses effects="waterfall" class="top-background">
+                  <app-toolbar style="height: 64px;">
+                    <div main-title>App name</div>
+                  </app-toolbar>
+                </app-header>-->
+                <div class="content layout vertical">
+                    <paper-card image="/src/img/profile.jpg" class="profile">
+                        <div class="card-content">
+                            <div class="profile-header">Full-Stack Software Engineer</div>
+                            <p class="profile-light">DevOps Specialized <br/> Agile-Certified</p>
+                        </div>
+                        <div class="card-actions">
+                            <!--<paper-icon-button icon="file-download"></paper-icon-button>-->
+                            <!--<paper-icon-button src="/src/img/In-Black-28px-R.png"></paper-icon-button>-->
+                            <paper-button>LinkedIn</paper-button>
+                            <paper-button>
+                                <span>Resume</span>
+                                <iron-icon icon="file-download"></iron-icon>
+                            </paper-button>
+                        </div>
+                    </paper-card>
 
-          <div class="item">
-            <paper-card image="/src/img/profile.jpg" class="profile">
-              <div class="card-content">
-                Software Engineer
-              </div>
-              <div class="card-actions">
-                <paper-button>Share</paper-button>
-                <paper-button>Explore!</paper-button>
-              </div>
-            </paper-card>
-          </div>
-          <div class="item">
-            <paper-card image="/src/img/profile.jpg" class="profile">
-              <div class="card-content">
-                Software Engineer
-              </div>
-              <div class="card-actions">
-                <paper-button>Share</paper-button>
-                <paper-button>Explore!</paper-button>
-              </div>
-            </paper-card>
-          </div>
-          <div class="item">
-            <paper-card image="/src/img/profile.jpg" class="profile">
-              <div class="card-content">
-                Software Engineer
-              </div>
-              <div class="card-actions">
-                <paper-button>Share</paper-button>
-                <paper-button>Explore!</paper-button>
-              </div>
-            </paper-card>
-          </div>
-        </div>
-        <!--<paper-card image="/src/img/profile.jpg" class="profile">
-          <div class="card-content">
-            Software Engineer
-          </div>
-          <div class="card-actions">
-            <paper-button>Share</paper-button>
-            <paper-button>Explore!</paper-button>
-          </div>
-        </paper-card>
-        <paper-card image="/src/img/profile.jpg" class="profile">
-          <div class="card-content">
-            Software Engineer
-          </div>
-          <div class="card-actions">
-            <paper-button>Share</paper-button>
-            <paper-button>Explore!</paper-button>
-          </div>
-        </paper-card>
-        <paper-card image="/src/img/profile.jpg" class="profile">
-          <div class="card-content">
-            Software Engineer
-          </div>
-          <div class="card-actions">
-            <paper-button>Share</paper-button>
-            <paper-button>Explore!</paper-button>
-          </div>
-        </paper-card>
-        <paper-card image="/src/img/profile.jpg" class="profile">
-          <div class="card-content">
-            Software Engineer
-          </div>
-          <div class="card-actions">
-            <paper-button>Share</paper-button>
-            <paper-button>Explore!</paper-button>
-          </div>
-        </paper-card>
-        <paper-card image="/src/img/profile.jpg" class="profile">
-          <div class="card-content">
-            Software Engineer
-          </div>
-          <div class="card-actions">
-            <paper-button>Share</paper-button>
-            <paper-button>Explore!</paper-button>
-          </div>
-        </paper-card>
-        <paper-card image="/src/img/profile.jpg" class="profile">
-          <div class="card-content">
-            Software Engineer
-          </div>
-          <div class="card-actions">
-            <paper-button>Share</paper-button>
-            <paper-button>Explore!</paper-button>
-          </div>
-        </paper-card>
-        <paper-card image="/src/img/profile.jpg" class="profile">
-          <div class="card-content">
-            Software Engineer
-          </div>
-          <div class="card-actions">
-            <paper-button>Share</paper-button>
-            <paper-button>Explore!</paper-button>
-          </div>
-        </paper-card>-->
-      </div>
-    <!--<div class="center-div">
-      <div class="top-background"></div>
-      <paper-card image="/src/img/profile.jpg" class="profile">
-        <div class="card-content">
-          Software Engineer
-        </div>
-        <div class="card-actions">
-          <paper-button>Share</paper-button>
-          <paper-button>Explore!</paper-button>
-        </div>
-      </paper-card>
-    </div>-->
-    </app-header-layout>
+            </app-header-layout>
+        </app-drawer-layout>
 
-  </template>
+    </template>
 
-  <script>
-    /**
-     * @customElement
-     * @polymer
-     */
-    class MyHomepageApp extends Polymer.Element {
-      static get is() { return 'my-homepage-app'; }
-      static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: 'my-homepage-app'
-          }
-        };
-      }
-    }
+    <script>
+        /**
+         * @customElement
+         * @polymer
+         */
+        class MyHomepageApp extends Polymer.Element {
+            static get is() {
+                return 'my-homepage-app';
+            }
+            static get properties() {
+                return {
+                    prop1: {
+                        type: String,
+                        value: 'my-homepage-app'
+                    }
+                };
+            }
+        }
 
-    window.customElements.define(MyHomepageApp.is, MyHomepageApp);
-  </script>
+        window.customElements.define(MyHomepageApp.is, MyHomepageApp);
+    </script>
 </dom-module>
